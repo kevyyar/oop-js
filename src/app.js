@@ -1,17 +1,19 @@
 class Vehicle {
-    constructor(licenseNum) {
-        this.licenseNum = licenseNum
+    constructor() {
+        this.gpsEnabled = true;
     }
 }
 
 class Drone extends Vehicle {}
 
 class Car extends Vehicle {
-    constructor(licenseNum) {
-        super(licenseNum);
+    constructor() {
+        super();
+        this.gpsEnabled = false
     }
 }
 
 
-let c = new Car('License num: A123', 'Black')
-console.log(c.licenseNum)
+let c = new Car()
+console.log(c.gpsEnabled) // true (does not exist on Car class, but it exists on base class, so we can use it)
+console.log(c.gpsEnabled) // false (it has been overwritten in the child class Car)
