@@ -1,19 +1,27 @@
 class Vehicle {
-    constructor() {
-        this.gpsEnabled = true;
+    start() {
+        console.log('starting vehicle')
+    }
+
+    static getCompanyName() {
+        console.log('Vehicle Class: My Company')
     }
 }
 
-class Drone extends Vehicle {}
-
 class Car extends Vehicle {
-    constructor() {
-        super();
-        this.gpsEnabled = false
+    start() {
+        super.start();
+        console.log('starting Car')
+    }
+
+    static getCompanyName() {
+        super.getCompanyName()
+        console.log('Car Class: My Other Company')
     }
 }
 
 
 let c = new Car()
-console.log(c.gpsEnabled) // true (does not exist on Car class, but it exists on base class, so we can use it)
-console.log(c.gpsEnabled) // false (it has been overwritten in the child class Car)
+c.start()
+
+Car.getCompanyName()
