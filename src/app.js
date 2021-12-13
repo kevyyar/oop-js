@@ -1,25 +1,20 @@
 class Drone {
-  constructor(id, name) {
-    this.id = id;
-    this.name = name;
+  constructor(id) {
+    this._id = id; // convention for a private property with underscore (_id)
   }
 
-  static getCompany() {
-    console.log("in getCompany method");
+  get id() {
+    return this._id; // we can only read and we cannot modify with the getter.
   }
 
-  static getCompany2() {
-    console.log(this.id);
-  }
-
-  fly() {
-    console.log("Fly this drone with ID: " + this.id);
+  set id(newIDValue) {
+    this._id = newIDValue; // we can modify the getter value with the setter
   }
 }
 
-let drone = new Drone("A123", "Flyer");
-let drone2 = new Drone("B456", "Twirl");
+let drone = new Drone("A123");
+console.log(drone.id);
+drone.id = "B456"; // this is the new value set in setter
+console.log(drone.id);
 
-Drone.getCompany(); // 'in getCompany method'
-drone.getCompany(); // TypeError: drone.getCompany is not a function (it only exists on the class and not on the instance)
-drone.getCompany2(); // this.id only exists on the instance and on the class itself
+// WE CAN ACCESS THE SETTER AND GETTERS AS BEING PROPERTIES AND NOT FUNCTIONS EVEN THOUGH THEY ARE CREATED SUCH AS A METHOD
