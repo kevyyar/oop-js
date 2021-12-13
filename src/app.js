@@ -1,8 +1,11 @@
-class Drone {}
+class Drone {
+  constructor(id, name) {
+    this.id = id;
+    this.name = name;
+  }
+}
 
-console.log(typeof Drone); // function
+let drone = new Drone("A123", "Flyer");
 
-let drone = new Drone();
-console.log(typeof drone); // object
-
-console.log(drone instanceof Drone); // true
+console.log("Drone: " + drone.id);
+console.log("Name: " + drone.name);
