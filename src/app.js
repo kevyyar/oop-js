@@ -4,7 +4,7 @@ class Drone {
   }
 
   get id() {
-    return this._id; // we can only read and we cannot modify with the getter.
+    return this._id; // we can only read, so we cannot modify with the getter.
   }
 
   set id(newIDValue) {
