@@ -5,7 +5,11 @@ class Drone {
   }
 }
 
-let drone = new Drone("A123", "Flyer");
+Drone.maxHeight = 2000;
 
-console.log("Drone: " + drone.id);
-console.log("Name: " + drone.name);
+let drone = new Drone("A123", "Flyer");
+let drone2 = new Drone("B456", "Twirl");
+
+console.log(drone.id);
+console.log(drone2.id);
+console.log(Drone.maxHeight);
